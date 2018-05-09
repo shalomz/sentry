@@ -1236,7 +1236,7 @@ SENTRY_ONPREMISE = True
 SENTRY_USE_X_FORWARDED_FOR = True
 
 SENTRY_DEFAULT_INTEGRATIONS = (
-    'sentry.integrations.bitbucket.BitBucketIntegrationProvider',
+    'sentry.integrations.bitbucket.BitbucketIntegrationProvider',
     'sentry.integrations.slack.SlackIntegrationProvider',
     'sentry.integrations.github.GitHubIntegrationProvider',
     'sentry.integrations.jira.JiraIntegrationProvider',
