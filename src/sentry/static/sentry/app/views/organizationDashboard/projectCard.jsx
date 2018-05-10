@@ -16,6 +16,7 @@ import overflowEllipsis from 'app/styles/overflowEllipsis';
 import PlatformList from './platformList';
 import Chart from './chart';
 import NoEvents from './noEvents';
+import Deploys from './deploys';
 
 class ProjectCard extends React.Component {
   static propTypes = {
@@ -65,6 +66,7 @@ class ProjectCard extends React.Component {
           )}
           {!project.firstEvent && <NoEvents />}
         </ChartContainer>
+        <Deploys deploys={project.deploys} />
         <PlatformList project={project} orgId={params.orgId} />
       </StyledProjectCard>
     );
