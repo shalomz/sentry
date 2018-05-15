@@ -17,7 +17,20 @@ class JiraApiClient(object):
         self.shared_secret = shared_secret
 
     def get_issue(self, issue_id):
-        return integration_request('GET', self.ISSUE_URL % (issue_id,))
+        return integration_request(
+            method='GET',
+            path=self.ISSUE_URL % (issue_id,),
+            app_key=JIRA_KEY,
+            base_url=self.base_url,
+            shared_secret=self.shared_secret,
+        )
 
     def create_comment(self, issue_key, comment):
-        return integration_request('POST', self.COMMENT_URL % issue_key, data={'body': comment})
+        return integration_request(
+            method='POST',
+            path=self.COMMENT_URL % issue_key,
+            app_key=JIRA_KEY,
+            base_url=self.base_url,
+            shared_secret=self.shared_secret,
+            data={'body': comment}
+        )
