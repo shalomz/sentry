@@ -37,7 +37,11 @@ class GroupIntegrationDetails(GroupEndpoint):
 
         # TODO(jess): add create issue config to serializer
         return Response(
-            serialize(integration, request.user, IntegrationIssueSerializer(group, action))
+            serialize(
+                integration,
+                request.user,
+                IntegrationIssueSerializer(group, action, params=request.GET),
+            )
         )
 
     # was thinking put for link an existing issue, post for create new issue?
