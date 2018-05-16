@@ -9,6 +9,7 @@ python: 2.7
 branches:
   only:
   - master
+  - josh-testing
 
 cache:
   pip: true
